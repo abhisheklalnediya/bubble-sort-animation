@@ -1,0 +1,20 @@
+{
+  "name": "sortanim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sortanim.js",
+  "scripts": {
+    "start": "http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

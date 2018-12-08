@@ -1,0 +1,158 @@
+:root {
+  --duration:200ms;
+  --delay:100ms;
+  --color-border: #8C8C8C;
+  --color: #03A9F4;
+  --color-active: #069BDE;
+  --color-hover: #30BFFF;
+  --length: 104px;
+  --length-:  -104px;
+}
+
+h2{
+  height: 20px;
+  color: #222
+}
+h2{
+  height: 20px;
+  color: #666
+}
+
+body {
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+input {
+  font-size: 20px;
+  padding: 10px;
+  letter-spacing: 5px;
+  border-radius: 5px;
+  border: 2px solid #DDD;
+}
+
+input { outline: none; }
+button::-moz-focus-inner { border: 0; }
+
+button {
+  font-size: 20px;
+  height: 47px;
+  width: 116px;
+  color: #FFF;
+  background: var(--color);
+  border: 2px solid var(--color-active);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--color-hover);
+}
+
+button:active {
+  background: var(--color-active);
+}
+
+button:disabled{
+  background: #DDD;
+  border-color: var(--color-border);
+  cursor: auto;
+}
+
+#Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Sortanim {
+  border-bottom: 3px solid #DDD;
+  padding: 10px;
+  padding-bottom: 20px; 
+  margin-top: 50px;
+  height: 206px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: inline-block;
+  max-width: 95%;
+  
+}
+
+.box {
+  display: inline-block;
+  position: relative;
+  border: 2px solid var(--color-border);
+  padding: 20px;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  top: 80px;
+  color: var(--color);
+  border-radius: 63px;
+  font-size: 30px;
+  background: #E6E6E6;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box.jump {
+  top: 0px;
+  /* transition: top var(--duration) cubic-bezier(0.175, 0.885, 0.9, 1.5); */
+  transition: top var(--duration) ease-in;
+}
+
+.box.jump.down {
+  top: 80px;
+  transition: top var(--duration) ease-out;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(var(--length));
+  }
+}
+
+.box.jump.left {
+  animation-name: glideleft;
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+}
+
+.box.jump.right {
+  animation-name: glideright;
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+}
+
+@keyframes glideleft {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(var(--length-));
+  }
+}
+
+@keyframes glideright {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(var(--length));
+  }
+}
